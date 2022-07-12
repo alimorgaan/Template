@@ -25,17 +25,28 @@
     margin-top: -37px;
     font-weight: 600;
 }
+
+@media (max-width : 768px) {
+    .special-heading{
+        font-size: 80px;
+    }
+    .special-heading + p{ 
+        text-align: center;
+        margin-top: -26px;
+        font-weight: 600;
+        font-size: 17px;
+    }
+}
 .header{
     /* box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); */
     
 }
 .container{
-    margin: auto;
-}
-
-.header .container{
+    margin: auto; 
     padding: 15px;
 }
+
+
 
 /* start header  */
 .header .container{
@@ -136,6 +147,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50% , -50%);
+    width: 320px;
+    
 }
 
 .landing h1{
@@ -149,8 +162,8 @@
 /* start features */
 .features{
     background-color: #f6f6f6;
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .features .container{
     display: grid;
@@ -185,8 +198,8 @@
 
 /* start serv  */
 .services{
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .services .container .serv-content{
@@ -210,7 +223,11 @@
 .col-image .image{
     position: relative;
 }
-
+@media (max-width :992px ) {
+    .col-image .image{
+        display: none;
+    }
+}
 .col-image .image::before{
     content: "";
     background-color: var(--secondary-color);
@@ -225,6 +242,17 @@
 .services .container .serv-content .serv{
     display: flex;
     gap: 30px;
+    padding: 15px;
+}
+
+@media (max-width : 768px) {
+    .services .container .serv-content .serv{
+        flex-direction: column;
+        align-items: center;
+    }
+    .serv-text{
+        text-align: center;
+    }
 }
 
 .serv i{
