@@ -4,18 +4,246 @@
     padding: 0;
     font-family: 'Work Sans', sans-serif;
 }
+
+:root{
+
+    --main-color :#10cab7; 
+    --secondary-color : #2c4577; 
+}
+
+.special-heading{
+    font-size: 110px;
+    letter-spacing: -4px;
+    color: rgb(228, 228, 228);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.special-heading + p{ 
+    text-align: center;
+    margin-top: -37px;
+    font-weight: 600;
+}
+.header{
+    /* box-shadow: 0 2px 4px 0 rgba(0,0,0,.2); */
+    
+}
 .container{
-    background-color: cornflowerblue;
-    color: white ;
-    padding: 10px;
     margin: auto;
+}
+
+.header .container{
+    padding: 15px;
+}
+
+/* start header  */
+.header .container{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo{
+    width: 80px;
+}
+.header .links {
+    position: relative;
+}
+
+
+.header .links .menu-icon{
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.header .links .menu-icon:hover span:nth-child(2){
+    width: 100%;
+}
+.header .links .menu-icon span {
+    display: block;
+    background-color: #333;
+    height: 2px;
+    margin-bottom: 5px;
+}
+
+.header .links .menu-icon span:first-child{
+    width: 100%;
+}
+.header .links .menu-icon span:nth-child(2){
+    width: 60%;
+    transition: 0.3s;
+}
+.header .links .menu-icon span:last-child{
+    width: 100%;
+}
+
+.header .links ul {
+    position: absolute;
+    background-color: #f6f6f6;
+    display: none;
+    right: 0 ;
+    top: 140%;
+    width: 200px;
+    z-index: 1;
+}
+
+.header .links:hover ul{
+    display: block;
+}
+.header .links ul::before{
+    content: "";
+    position: absolute;
+    border: 10px solid #eee;
+    border-color: transparent transparent #eee transparent;
+    bottom: 100%;
+    right: 5px;
+}
+.header .links ul li{
+    list-style: none;
+    padding: 10px;
+    
+}
+.header .links ul li:not(:last-child){
+    border-bottom: 2px rgb(169, 169, 169) solid;
+}
+.header .links ul li a {
+    transition: 0.3s;
+}
+.header .links ul li:hover a {
+   padding-left: 15px;
+}
+.header .links ul li a{
+    text-decoration: none;
+}
+
+/* end header */
+
+/* start landing  */
+.landing h1 , .landing p{
+    margin: 0 ;
+    
+}
+.landing{
+    background-image: url(../imgs/cover.png);
+    background-size: cover;
+    height: calc(100vh - 62px);
+    position: relative;
+}
+.landing .text{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+.landing h1{
+    font-size: 50px;
+    color: var(--main-color);
+}
+
+
+/* end landing  */
+
+/* start features */
+.features{
+    background-color: #f6f6f6;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.features .container{
+    display: grid;
+    
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
+    gap: 20px;
+   
+}
+
+.feat{
+    padding: 10px;
+    text-align: center;
+}
+
+.feat i {
+    font-size: 50px;
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+
+.feat h3 {
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.feat p{
+    font-size: 17px;
+    line-height: 1.7;
+    color: #7a7a7a;
+}
+/* end features */
+
+/* start serv  */
+.services{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.services .container .serv-content{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px , 1fr ));
+    gap: 30px;
+}
+.services .col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.col-image{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.parent{
-    background-color: #eee;
+
+.col-image .image{
+    position: relative;
 }
+
+.col-image .image::before{
+    content: "";
+    background-color: var(--secondary-color);
+    position: absolute;
+    top: -40px;
+    right: -32px;
+    z-index: -2;
+    width: 80px;
+    height: calc(100% + 70px);
+
+}
+.services .container .serv-content .serv{
+    display: flex;
+    gap: 30px;
+}
+
+.serv i{
+    font-size: 50px;
+    color: var(--main-color);
+}
+
+.serv h3{
+    margin-bottom: 20px;
+}
+
+.serv p {
+ line-height: 1.7;
+}
+
+.services .image img{
+    width: 260px;
+}
+/* end serv */
 
 @media (min-width : 768px) {
     .container{
@@ -35,3 +263,4 @@
         width: 1170px;
     }
 }
+
